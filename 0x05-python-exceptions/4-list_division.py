@@ -2,7 +2,7 @@
 
 def list_division(my_list_1, my_list_2, list_length):
 
-    new_list = []
+    other_list = []
     for i in range(0, list_length):
         try:
             vis = my_list_1[i] / my_list_2[i]
@@ -16,5 +16,5 @@ def list_division(my_list_1, my_list_2, list_length):
             print("out of range")
             vis = 0
         finally:
-            nmy_list.append(vis)
-    return (my_list)
+            other_list.append(vis)
+    return (other_list)
