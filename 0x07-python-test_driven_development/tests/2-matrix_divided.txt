@@ -1,0 +1,47 @@
+===========================
+The 2-matrix_divided Module
+Using the matrix_divided Function
+First, import the matrix_divided function from the 2-matrix_divided module:
+
+
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+Perform the testing:
+
+
+>>> matrix_divided([[1, 2, 3], [4, 5, 6], [0, 10, 20]], 1)
+[[1.0, 2.0, 3.0], [4.0, 5.0, 6.0], [0.0, 10.0, 20.0]]
+
+
+>>> matrix_divided([[1, 2, 3], [4, 5, 6], [0, 10, 20]], 0)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "2-matrix_divided.py", line X, in matrix_divided
+    raise ZeroDivisionError("division by zero")
+ZeroDivisionError: division by zero
+
+
+>>> matrix_divided([[-1, 2, 3], [-4, 5, 6], [0, 10, 20]], -1)
+[[1.0, -2.0, -3.0], [4.0, -5.0, -6.0], [-0.0, -10.0, -20.0]]
+
+
+>>> matrix_divided([[1, 2, 3], [4, 5, 6, 5], [0, 10, 20]], 1)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "2-matrix_divided.py", line X, in matrix_divided
+    raise TypeError("Each row of the matrix must have the same size")
+TypeError: Each row of the matrix must have the same size
+
+
+>>> matrix_divided([['hey', 2, 3], [4, 5, 6], [0, 10, 20]], 1)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "2-matrix_divided.py", line X, in matrix_divided
+    raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+>>> matrix_divided([[1, 2, 3], [4, 5, 6], [0, 10, 20]], 'hey')
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "2-matrix_divided.py", line X, in matrix_divided
+    raise TypeError("div must be a number")
+TypeError: div must be a number
