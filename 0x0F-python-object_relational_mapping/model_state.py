@@ -1,16 +1,24 @@
 #!/usr/bin/python3
+
 """
-Contains the class definition of a State and an instance Base
+    module contains Base and State class
 """
-import sys
-from model_state import Base, State
-from sqlalchemy import create_engine
 
-if __name__ == "__main__":
-    # Create an SQLAlchemy engine
-    engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'.
-                           format(sys.argv[1], sys.argv[2], sys.argv[3]))
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy import Column
+from sqlalchemy import String
+from sqlalchemy import Integer
 
-    # Create the 'states' table in the database
-    Base.metadata.create_all(engine)
+Base = declarative_base()
 
+class State(Base):
+    """
+        State class inherits the Base class
+        Attributes:
+            id (int)
+            name (string)
+    """
+    __tablename__ = 'states'
+
+    id = Column(Integer, primary_key=True, autoincrement=True, nullable=False)
+    name = Column(String(128), nullable=False)
